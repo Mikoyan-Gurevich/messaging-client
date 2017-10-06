@@ -1,7 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './background.scss';
-import SuperContainer from '../SuperContainer/superContainer';
+import SignUp from '../SignUp/signUp';
+import HomePage from '../HomePage/homePage';
+//import SuperContainer from '../SuperContainer/superContainer';
 
 class Background extends React.Component {
     constructor() {
@@ -13,9 +15,9 @@ class Background extends React.Component {
         return (
             <Router>
                 <div className='background'>
-                    <div className='top'></div>
-                    <div className='bottom'></div>
-                    <SuperContainer/>
+                    <Route exact path="/" component={HomePage}/>
+                    <Route path="/signup" component={SignUp}/>
+                    {/*<SuperContainer/>*/}
                 </div>
             </Router>
         );

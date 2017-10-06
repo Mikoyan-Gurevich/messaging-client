@@ -14,6 +14,9 @@ app.use(webpackHotMiddleware(compiler, {
     path: '/__webpack_hmr'
 }));
 app.set('port', 3000);
+app.get('/*', function(req, res) {
+    res.redirect('/');
+});
 app.use(express.static(path.join(__dirname, 'build')));
 var server = app.listen(app.get('port'), function() {
     var port = server.address().port;
