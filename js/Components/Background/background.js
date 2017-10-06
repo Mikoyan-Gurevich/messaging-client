@@ -1,8 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './background.scss';
 import SignUp from '../SignUp/signUp';
 import HomePage from '../HomePage/homePage';
+
 //import SuperContainer from '../SuperContainer/superContainer';
 
 class Background extends React.Component {

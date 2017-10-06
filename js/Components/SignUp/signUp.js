@@ -6,7 +6,14 @@ import 'whatwg-fetch'
 class SignUp extends React.Component {
     constructor() {
         super();
+        this.inputs = [
+            {name: 'firstName', label: 'First Name'},
+            {name: 'lastName', label: 'Last Name'},
+            {name: 'password', label: 'Password'},
+            {name: 'mobile', label: 'Mobile'}
+        ];
         this.submitForm = this.submitForm.bind(this);
+        this.handleInput = this.handleInput.bind(this);
         this.state = {
             firstName: '',
             lastName: '',
@@ -18,30 +25,35 @@ class SignUp extends React.Component {
     submitForm() {
         fetch('http://localhost:3001/signup', {
             method: 'POST',
-            body: this.state
-        })
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+        });
+    }
+
+    handleInput(event) {
+        let obj = {};
+        obj[event.target.name] = event.target.value;
+        this.setState(obj);
     }
 
     render() {
         return (
             <div>
+                {
+                    this.inputs.map((inp) => {
+                        return (
+                            <div>
+                                <label>{inp.label}</label>
+                                <input name={inp.name} value={this.state[inp.name]} onChange={this.handleInput}/>
+                            </div>
+                        );
+                    })
+                }
                 <div>
-                    <label>First Name</label>
-                    <input value={this.state.firstName}/>
+                    <button onClick={this.submitForm}>Submit</button>
                 </div>
-                <div>
-                    <label>Last Name</label>
-                    <input value={this.state.lastName}/>
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input value={this.state.password}/>
-                </div>
-                <div>
-                    <label>Mobile Number</label>
-                    <input value={this.state.mobile}/>
-                </div>
-                <div><button onClick={this.submitForm}>Submit</button></div>
             </div>
         );
     }
