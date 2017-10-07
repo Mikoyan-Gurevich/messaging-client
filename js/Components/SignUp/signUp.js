@@ -10,7 +10,8 @@ class SignUp extends React.Component {
             {name: 'firstName', label: 'First Name'},
             {name: 'lastName', label: 'Last Name'},
             {name: 'password', label: 'Password'},
-            {name: 'mobile', label: 'Mobile'}
+            {name: 'mobile', label: 'Mobile Number'},
+            {name: 'email', label: 'Email ID'}
         ];
         this.submitForm = this.submitForm.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -40,19 +41,25 @@ class SignUp extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='signup'>
+                <div className='title'>Fill the Form below to get Started.</div>
                 {
-                    this.inputs.map((inp) => {
+                    this.inputs.map((inp, key) => {
                         return (
-                            <div>
-                                <label>{inp.label}</label>
-                                <input name={inp.name} value={this.state[inp.name]} onChange={this.handleInput}/>
+                            <div key={key}>
+                                <input
+                                    name={inp.name}
+                                    type={inp.name === 'password' ? 'password' : ''}
+                                    placeholder={'Enter ' + inp.label}
+                                    value={this.state[inp.name]}
+                                    onChange={this.handleInput}
+                                />
                             </div>
                         );
                     })
                 }
                 <div>
-                    <button onClick={this.submitForm}>Submit</button>
+                    <button onClick={this.submitForm}>Sign up as a New User</button>
                 </div>
             </div>
         );
