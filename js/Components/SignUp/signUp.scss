@@ -32,6 +32,10 @@
     outline: none;
     cursor: pointer;
   }
+  button.disabled {
+    background-color: #c3c3c3;
+    color: white;
+  }
   a {
     font-size: 15px;
     text-decoration: none !important;

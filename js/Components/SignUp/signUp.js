@@ -1,17 +1,18 @@
 import React from 'react';
 import './signUp.scss';
-import 'whatwg-fetch'
+import {postData} from '../../utils/fetch';
+import {signup as signupURL} from '../../utils/urls';
 
 
 class SignUp extends React.Component {
     constructor() {
         super();
         this.inputs = [
-            {name: 'firstName', label: 'First Name'},
-            {name: 'lastName', label: 'Last Name'},
-            {name: 'password', label: 'Password'},
-            {name: 'mobile', label: 'Mobile Number'},
-            {name: 'email', label: 'Email ID'}
+            {name: 'firstName', label: 'First Name', type: 'text'},
+            {name: 'lastName', label: 'Last Name', type: 'text'},
+            {name: 'password', label: 'Password', type: 'password'},
+            {name: 'mobile', label: 'Mobile Number', type: 'number'},
+            {name: 'email', label: 'Email ID', type: 'text'}
         ];
         this.submitForm = this.submitForm.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -19,17 +20,16 @@ class SignUp extends React.Component {
             firstName: '',
             lastName: '',
             password: '',
-            mobile: ''
+            mobile: '',
+            email: ''
         };
     }
 
     submitForm() {
-        fetch('http://localhost:3001/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.state)
+        postData('POST', signupURL, this.state, (resp) => {
+            console.log('Success', resp);
+        }, (error) => {
+            console.log('Failure', error);
         });
     }
 
@@ -39,7 +39,19 @@ class SignUp extends React.Component {
         this.setState(obj);
     }
 
+    isFormInvalid() {
+        let invalidity = false;
+        this.inputs.map((inp) => {
+            if (this.state[inp.name] === '') {
+                invalidity = true;
+                return invalidity;
+            }
+        });
+        return invalidity;
+    }
+
     render() {
+        let disableSubmitButton = this.isFormInvalid();
         return (
             <div className='signup'>
                 <div className='title'>Fill the Form below to get Started.</div>
@@ -49,7 +61,7 @@ class SignUp extends React.Component {
                             <div key={key}>
                                 <input
                                     name={inp.name}
-                                    type={inp.name === 'password' ? 'password' : ''}
+                                    type={inp.type}
                                     placeholder={'Enter ' + inp.label}
                                     value={this.state[inp.name]}
                                     onChange={this.handleInput}
@@ -59,7 +71,12 @@ class SignUp extends React.Component {
                     })
                 }
                 <div>
-                    <button onClick={this.submitForm}>Sign up as a New User</button>
+                    <button
+                        className={disableSubmitButton ? 'disabled' : ''}
+                        disabled={disableSubmitButton}
+                        onClick={this.submitForm}
+                    >Sign up as a New User
+                    </button>
                 </div>
             </div>
         );
