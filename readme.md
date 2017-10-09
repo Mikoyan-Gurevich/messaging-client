@@ -53,3 +53,5 @@ http {
 ```
 ln -s /usr/local/etc/nginx/sites-available/messaging.gsharma.com /usr/local/etc/nginx/sites-enabled
 ```
+
+7. Reload nginx with the command `sudo nginx -s reload`
