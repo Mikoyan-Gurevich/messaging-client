@@ -29,11 +29,12 @@ This is needed to run application with name in url bar.
 
 ```
 server {
-  listen   messaging.gsharma.com;
-  server_name messaging.gsharma.com;
-
+  listen                443 ssl;
+  server_name           messaging.gsharma.com;
+  ssl_certificate       ...cert.pem; # Path to certificate
+  ssl_certificate_key   ...key.pem; # Path to certificate key
     location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass https://localhost:3000;
     }
 }
 ```
@@ -55,3 +56,12 @@ ln -s /usr/local/etc/nginx/sites-available/messaging.gsharma.com /usr/local/etc/
 ```
 
 7. Reload nginx with the command `sudo nginx -s reload`
+
+### To generate certificates
+
+```
+openssl genrsa -out key.pem
+openssl req -new -key key.pem -out csr.pem
+openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
+rm csr.pem
+```
