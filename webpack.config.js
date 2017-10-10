@@ -1,7 +1,8 @@
 var webpack = require('webpack'),
     path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin')
-    CleanWebpackPlugin = require('clean-webpack-plugin');
+    CleanWebpackPlugin = require('clean-webpack-plugin')/*,
+        OfflinePlugin = require('offline-plugin')*/;
 
 module.exports = {
     entry: {
@@ -55,6 +56,7 @@ module.exports = {
         }),
         // either of the below two can be used, but hashed module is prferred for the production use
         new webpack.HashedModuleIdsPlugin(),  // uses the 4 digits hash, which is created by the file path of the module
-        //new webpack.NamedModulesPlugin()  // uses the path to the module rather than a numerical identifier
+        //new webpack.NamedModulesPlugin()  // uses the path to the module rather than a numerical identifier,
+        //new OfflinePlugin()
     ]
 };
