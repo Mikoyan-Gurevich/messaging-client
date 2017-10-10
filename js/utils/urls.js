@@ -1,2 +1,2 @@
-const domainURL = 'http://localhost:3001';
+const domainURL = 'https://messaging-server.gsharma.com';
 export const signup = domainURL + '/signup';
