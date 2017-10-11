@@ -1,33 +1,7 @@
 html {
   height: 100%;
   font-family: sans-serif;
-  background: rgba(184, 235, 255, 1);
-  background: -moz-linear-gradient(
-                  left,
-                  rgba(184, 235, 255, 1) 0%,
-                  rgba(146, 220, 255, 0.86) 56%,
-                  rgba(117, 209, 255, 0.86) 100%
-  );
-  background: -webkit-linear-gradient(
-                  left,
-                  rgba(184, 235, 255, 1) 0%,
-                  rgba(146, 220, 255, 0.86) 56%,
-                  rgba(117, 209, 255, 0.86) 100%
-  );
-  background: -o-linear-gradient(
-                  left,
-                  rgba(184, 235, 255, 1) 0%,
-                  rgba(146, 220, 255, 0.86) 56%,
-                  rgba(117, 209, 255, 0.86) 100%
-  );
-  background: -ms-linear-gradient(
-                  left,
-                  rgba(184, 235, 255, 1) 0%,
-                  rgba(146, 220, 255, 0.86) 56%,
-                  rgba(117, 209, 255, 0.86) 100%
-  );
-  background: linear-gradient(to right, rgba(184, 235, 255, 1) 0%, rgba(146, 220, 255, 0.86) 56%, rgba(117, 209, 255, 0.86) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8ebff', endColorstr='#75d1ff', GradientType=1);
+  min-width: 1300px;
   body {
     height: 100%;
     margin: 0;

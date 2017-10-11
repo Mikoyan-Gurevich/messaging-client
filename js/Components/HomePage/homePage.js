@@ -15,12 +15,8 @@ class HomePage extends React.Component {
         return (
             <Router>
                 <div className='homePage'>
-                    <div className='centerPart'>
-                        <div className='innerCenter'>
-                            <Route exact path="/" component={Login}/>
-                            <Route path="/signup" component={SignUp}/>
-                        </div>
-                    </div>
+                    <Route exact path="/" component={Login}/>
+                    <Route path="/signup" component={SignUp}/>
                 </div>
             </Router>
         );

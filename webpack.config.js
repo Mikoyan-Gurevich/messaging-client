@@ -51,7 +51,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html', // The path specified here gets appended to the path provided in output section above
             path: path.resolve(__dirname, 'build'),
-            title: 'Welcome to messaging',
+            title: 'Konnect - Connecting Everyu Aspect',
             template: 'index.ejs'
         }),
         // either of the below two can be used, but hashed module is prferred for the production use
