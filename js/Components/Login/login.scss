@@ -49,10 +49,6 @@
         font-weight: 700;
         font-size: 25px;
       }
-      a {
-        font-size: 15px;
-        text-decoration: none !important;
-      }
       .userID {
         margin-top: 66px;
       }
@@ -76,12 +72,12 @@
     margin-top: 366px;
     margin-left: -97px;
   }
-  .newUser div:nth-child(1) {
-  }
+
   .newUser div:nth-child(2) {
     margin-top: 93px;
     font-weight: 700;
-    span {
+    a {
+      text-decoration: none !important;
       color: #1ec5d1;
     }
   }

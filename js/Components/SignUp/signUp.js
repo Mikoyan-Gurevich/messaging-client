@@ -40,21 +40,26 @@ class SignUp extends React.Component {
     }
 
     isFormInvalid() {
-        let invalidity = false;
+        // This is to make sure that none of the field is left blank.
         this.inputs.map((inp) => {
             if (this.state[inp.name] === '') {
-                invalidity = true;
-                return invalidity;
+                return true;
             }
         });
-        return invalidity;
+
+        // This is to make sure that email address field has valid email format
+            if(!new RegExp('^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$').test(this.state.email)) {
+                return true;
+            }
+        // If everything is fine, we return a false value for invalidity.
+        return false;
     }
 
     render() {
         let disableSubmitButton = this.isFormInvalid();
         return (
             <div className='signup'>
-                <div className='title'>Fill the Form below to get Started.</div>
+                <div className='logo'> </div>
                 {
                     this.inputs.map((inp, key) => {
                         return (
@@ -75,7 +80,7 @@ class SignUp extends React.Component {
                         className={disableSubmitButton ? 'disabled' : ''}
                         disabled={disableSubmitButton}
                         onClick={this.submitForm}
-                    >Sign up as a New User
+                    >SIGN UP
                     </button>
                 </div>
             </div>

@@ -8,26 +8,32 @@
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  .title {
-    font-size: 25px;
+  align-items: center;
+
+  .logo {
+    width: 98px;
+    height: 83px;
+    background-image: url(../../../assets/Logo.png);
   }
   input {
-    height: 40px;
-    border: none;
+    height: 46px;
     border-radius: 4px;
     width: 400px;
     font-size: 20px;
     text-align: center;
+    border: 1px solid black;
+    margin: 10px 0;
   }
   input::-webkit-input-placeholder {
     color: #e0e0e0;
   }
   button {
-    height: 40px;
+    font-weight: 600;
+    font-size: 25px;
     border: none;
-    background-color: #40bfff;
+    background-color: #55bdcc;
+    color: white;
     border-radius: 4px;
-    font-size: 15px;
     padding: 10px 15px;
     outline: none;
     cursor: pointer;
