@@ -2,6 +2,7 @@ import React from 'react';
 import './signUp.scss';
 import {postData} from '../../utils/fetch';
 import {signup as signupURL} from '../../utils/urls';
+import LogoTopLeft from '../../../assets/LogoTopLeft.png';
 
 
 class SignUp extends React.Component {
@@ -11,7 +12,7 @@ class SignUp extends React.Component {
             {name: 'firstName', label: 'First Name', type: 'text'},
             {name: 'lastName', label: 'Last Name', type: 'text'},
             {name: 'password', label: 'Password', type: 'password'},
-            {name: 'mobile', label: 'Mobile Number', type: 'number'},
+            {name: 'mobile', label: 'Mobile Number', type: 'text'},
             {name: 'email', label: 'Email ID', type: 'text'}
         ];
         this.submitForm = this.submitForm.bind(this);
@@ -34,9 +35,13 @@ class SignUp extends React.Component {
     }
 
     handleInput(event) {
-        let obj = {};
-        obj[event.target.name] = event.target.value;
-        this.setState(obj);
+        if(event.target.name === 'mobile' && isNaN(event.target.value)) {
+            return null;
+        } else {
+            let obj = {};
+            obj[event.target.name] = event.target.value;
+            this.setState(obj);
+        }
     }
 
     isFormInvalid() {
@@ -48,9 +53,9 @@ class SignUp extends React.Component {
         });
 
         // This is to make sure that email address field has valid email format
-            if(!new RegExp('^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$').test(this.state.email)) {
-                return true;
-            }
+        if (!new RegExp('^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$').test(this.state.email)) {
+            return true;
+        }
         // If everything is fine, we return a false value for invalidity.
         return false;
     }
@@ -59,29 +64,37 @@ class SignUp extends React.Component {
         let disableSubmitButton = this.isFormInvalid();
         return (
             <div className='signup'>
-                <div className='logo'> </div>
-                {
-                    this.inputs.map((inp, key) => {
-                        return (
-                            <div key={key}>
-                                <input
-                                    name={inp.name}
-                                    type={inp.type}
-                                    placeholder={'Enter ' + inp.label}
-                                    value={this.state[inp.name]}
-                                    onChange={this.handleInput}
-                                />
-                            </div>
-                        );
-                    })
-                }
-                <div>
-                    <button
-                        className={disableSubmitButton ? 'disabled' : ''}
-                        disabled={disableSubmitButton}
-                        onClick={this.submitForm}
-                    >SIGN UP
-                    </button>
+                <div className='left'>
+                    <img src={LogoTopLeft}/>
+                    <label>Konnect</label>
+                </div>
+                <div className='center'>
+                    <div className='logo' />
+                    {
+                        this.inputs.map((inp, key) => {
+                            return (
+                                <div key={key}>
+                                    <input
+                                        name={inp.name}
+                                        type={inp.type}
+                                        placeholder={'Enter ' + inp.label}
+                                        value={this.state[inp.name]}
+                                        onChange={this.handleInput}
+                                    />
+                                </div>
+                            );
+                        })
+                    }
+                    <div>
+                        <button
+                            className={disableSubmitButton ? 'disabled' : ''}
+                            disabled={disableSubmitButton}
+                            onClick={this.submitForm}
+                        >SIGN UP
+                        </button>
+                    </div>
+                </div>
+                <div className='right'>
                 </div>
             </div>
         );
