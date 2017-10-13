@@ -35,7 +35,7 @@ class SignUp extends React.Component {
     }
 
     handleInput(event) {
-        if(event.target.name === 'mobile' && isNaN(event.target.value)) {
+        if (event.target.name === 'mobile' && isNaN(event.target.value)) {
             return null;
         } else {
             let obj = {};
@@ -69,7 +69,7 @@ class SignUp extends React.Component {
                     <label>Konnect</label>
                 </div>
                 <div className='center'>
-                    <div className='logo' />
+                    <div className='logo'/>
                     {
                         this.inputs.map((inp, key) => {
                             return (

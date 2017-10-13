@@ -1,8 +1,9 @@
 import React from 'react';
-import './homePage.scss';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import './homePage.scss';
 import SignUp from '../SignUp/signUp';
 import Login from '../Login/login';
+import Chat from '../Chat/chat';
 
 
 class HomePage extends React.Component {
@@ -17,6 +18,7 @@ class HomePage extends React.Component {
                 <div className='homePage'>
                     <Route exact path="/" component={Login}/>
                     <Route path="/signup" component={SignUp}/>
+                    <Route path="/chat" component={Chat}/>
                 </div>
             </Router>
         );
