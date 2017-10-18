@@ -22,13 +22,21 @@ class SignUp extends React.Component {
             lastName: '',
             password: '',
             mobile: '',
-            email: ''
+            email: '',
+            signupComplete: false
         };
     }
 
     submitForm() {
-        postData('POST', signupURL, this.state, (resp) => {
-            console.log('Success', resp);
+        let postObj = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            password: this.state.password,
+            mobile: this.state.mobile,
+            email: this.state.email,
+        };
+        postData('POST', signupURL, postObj, (resp) => {
+            this.setState({signupComplete: true});
         }, (error) => {
             console.log('Failure', error);
         });
@@ -68,32 +76,39 @@ class SignUp extends React.Component {
                     <img src={LogoTopLeft}/>
                     <label>Konnect</label>
                 </div>
-                <div className='center'>
-                    <div className='logo'/>
-                    {
-                        this.inputs.map((inp, key) => {
-                            return (
-                                <div key={key}>
-                                    <input
-                                        name={inp.name}
-                                        type={inp.type}
-                                        placeholder={'Enter ' + inp.label}
-                                        value={this.state[inp.name]}
-                                        onChange={this.handleInput}
-                                    />
-                                </div>
-                            );
-                        })
-                    }
-                    <div>
-                        <button
-                            className={disableSubmitButton ? 'disabled' : ''}
-                            disabled={disableSubmitButton}
-                            onClick={this.submitForm}
-                        >SIGN UP
-                        </button>
+                {
+                    !this.state.signupComplete && <div className='center'>
+                        <div className='logo'/>
+                        {
+                            this.inputs.map((inp, key) => {
+                                return (
+                                    <div key={key}>
+                                        <input
+                                            name={inp.name}
+                                            type={inp.type}
+                                            placeholder={'Enter ' + inp.label}
+                                            value={this.state[inp.name]}
+                                            onChange={this.handleInput}
+                                        />
+                                    </div>
+                                );
+                            })
+                        }
+                        <div>
+                            <button
+                                className={disableSubmitButton ? 'disabled' : ''}
+                                disabled={disableSubmitButton}
+                                onClick={this.submitForm}
+                            >SIGN UP
+                            </button>
+                        </div>
                     </div>
-                </div>
+                }
+                {
+                    this.state.signupComplete && <div>
+                        This will be shown after successful signup
+                    </div>
+                }
                 <div className='right'>
                 </div>
             </div>
