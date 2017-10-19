@@ -5,5 +5,6 @@ import Homepage from './Components/HomePage/homePage';
 //import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 
 //OfflinePluginRuntime.install();
+console.log('Happy Diwali');
 
 ReactDOM.render(<Homepage/>, document.getElementById('app'));
