@@ -2,17 +2,17 @@ import 'whatwg-fetch';
 
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
-        return response
+        return response;
     } else {
         let error = new Error(response.statusText);
         error.response = response;
-        throw error
+        throw error;
     }
 }
 
 function parseJSON(response) {
     debugger;
-    return response.json()
+    return response.json();
 }
 
 function flattenURLParams(urlParams) {
@@ -32,22 +32,22 @@ function flattenURLParams(urlParams) {
 export function getData(method, url, urlParams, successCB, failureCB) {
     fetch(url + flattenURLParams(urlParams), {
         method: method,
-        headers: {'Content-Type': 'application/json'}
+        headers: {'Content-Type': 'application/json'},
     }).then(checkStatus).then(parseJSON).then((data) => {
-        successCB(data)
+        successCB(data);
     }).catch((error) => {
-        failureCB(error)
-    })
+        failureCB(error);
+    });
 }
 
 export function postData(method, url, body, successCB, failureCB) {
     fetch(url, {
         method: method,
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
     }).then(checkStatus).then(parseJSON).then((data) => {
-        successCB(data)
+        successCB(data);
     }).catch((error) => {
-        failureCB(error)
-    })
+        failureCB(error);
+    });
 }

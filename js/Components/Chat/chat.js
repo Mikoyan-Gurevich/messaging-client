@@ -6,7 +6,7 @@ class Chat extends React.Component {
         super();
         this.logoutUser = this.logoutUser.bind(this);
         this.state={
-            isUserLoggedOut: false
+            isUserLoggedOut: false,
         };
     }
 
@@ -16,10 +16,10 @@ class Chat extends React.Component {
     }
 
     render() {
-        if(this.state.isUserLoggedOut) {
-            return <Redirect exact to='/' />
+        if (this.state.isUserLoggedOut) {
+            return <Redirect exact to='/' />;
         }
-        return <div>This will become chat window <div onClick={this.logoutUser}>logout</div></div>
+        return <div>This will become chat window <div onClick={this.logoutUser}>logout</div></div>;
     }
 }
 export default Chat;

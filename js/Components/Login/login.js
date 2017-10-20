@@ -15,7 +15,7 @@ class Login extends React.Component {
             userID: '',
             password: '',
             staySignedIn: false,
-            isUserLoggedIn: window.localStorage.isUserLoggedIn !== 'false'
+            isUserLoggedIn: window.localStorage.isUserLoggedIn !== 'false',
         };
     }
 
@@ -38,8 +38,8 @@ class Login extends React.Component {
     }
 
     render() {
-        if(this.state.isUserLoggedIn) {
-            return <Redirect to='/chat' />
+        if (this.state.isUserLoggedIn) {
+            return <Redirect to='/chat' />;
         }
         return (
             <div className='superContainer'>

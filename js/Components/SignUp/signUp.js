@@ -13,7 +13,7 @@ class SignUp extends React.Component {
             {name: 'lastName', label: 'Last Name', type: 'text'},
             {name: 'password', label: 'Password', type: 'password'},
             {name: 'mobile', label: 'Mobile Number', type: 'text'},
-            {name: 'email', label: 'Email ID', type: 'text'}
+            {name: 'email', label: 'Email ID', type: 'text'},
         ];
         this.submitForm = this.submitForm.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -23,7 +23,7 @@ class SignUp extends React.Component {
             password: '',
             mobile: '',
             email: '',
-            signupComplete: false
+            signupComplete: false,
         };
     }
 
