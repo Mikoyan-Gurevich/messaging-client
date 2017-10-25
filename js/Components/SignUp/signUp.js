@@ -1,6 +1,7 @@
 import React from 'react';
 import './signUp.scss';
 import {postData} from '../../utils/fetch';
+import {Link} from 'react-router-dom';
 import {signup as signupURL} from '../../utils/urls';
 import LogoTopLeft from '../../../assets/LogoTopLeft.png';
 
@@ -105,9 +106,11 @@ class SignUp extends React.Component {
                     </div>
                 }
                 {
-                    this.state.signupComplete && <div>
-                        This will be shown after successful signup
-                    </div>
+                    this.state.signupComplete && <div className='postSignUp'>
+                        Congratulations ! You have been registered successfully.
+                        <Link to='/'>Login </Link>
+                        to continue.
+                        </div>
                 }
                 <div className='right'>
                 </div>
