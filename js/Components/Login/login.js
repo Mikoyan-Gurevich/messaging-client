@@ -15,20 +15,21 @@ class Login extends React.Component {
             userID: '',
             password: '',
             staySignedIn: false,
-            isUserLoggedIn: window.localStorage.isUserLoggedIn !== 'false',
+            invalidCredentials: false,
+            isUserLoggedIn: window.localStorage.userDetails && window.localStorage.userDetails !== '',
         };
     }
 
     proceedToLogin() {
-        // let {userID, password, staySignedIn} = this.state;
-        // postData('POST', loginURL, {userID, password, staySignedIn}, (resp) => {
-        //     console.log('Success', resp);
-        // }, (error) => {
-        //     console.log('Failure', error);
-        // });
-        // On success of login isUserLoggedIn state will be set as true
-        this.setState({isUserLoggedIn: true});
-        window.localStorage.isUserLoggedIn = true;
+         let {userID, password, staySignedIn} = this.state;
+         postData('POST', loginURL, {userID, password, staySignedIn}, (resp) => {
+             this.setState({isUserLoggedIn: true, invalidCredentials: false});
+             resp.staySignedIn = staySignedIn;
+            window.localStorage.userDetails = JSON.stringify(resp);
+         }, (error) => {
+             this.setState({invalidCredentials: true})
+         });
+        
     }
 
     onInputChange(event) {

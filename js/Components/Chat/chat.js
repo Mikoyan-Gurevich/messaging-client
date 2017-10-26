@@ -11,7 +11,7 @@ class Chat extends React.Component {
     }
 
     logoutUser() {
-        window.localStorage.isUserLoggedIn = false;
+        window.localStorage.userDetails = '';
         this.setState({isUserLoggedOut: true});
     }
 
