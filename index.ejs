@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset='utf-8'/> <!-- This specifies the charset that will be used in this document. If not specified, browser may misinterpret the character used. -->
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<!--Below three meta tags should come within first 1024 bytes of webpage-->
+	<!-- Below meta tag  specifies the charset that will be used in this document. If not specified, browser may misinterpret the character used. -->
+	<meta charset='utf-8'/> 
+	<!-- Below mentioned meta tag is an alternative to charset utf 8 meta tag-->
+    <!-- <meta http-equiv="Content-type" content="text/html; charset=utf-8"/> -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--  Below meta says that the width of viewport should be equal to the device width and initial page zoom will be 1 times and the page shouldn't shrink to fit the small width devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Below is meta Description. Meta descriptions are HTML attributes that provide concise summaries of webpages. They commonly appear underneath the blue clickable links in a search engine results page (SERP).-->
+	<meta name="description" content="One messaging app for all purpose. Konnect aims at providing all means to connect with friends, family or colleagues.">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="shortcut icon" href="favicon.png" type="image/png"/>
 </head>
