@@ -35,6 +35,7 @@ class Login extends React.Component {
     onInputChange(event) {
         let obj = {};
         obj[event.target.name] = event.target.name !== 'staySignedIn' ? event.target.value : event.target.checked;
+        Object.assign(obj, {invalidCredentials: false});
         this.setState(obj);
     }
 
@@ -52,7 +53,7 @@ class Login extends React.Component {
                         <label className='title'>Connecting every aspect.</label>
                         <input
                             name='userID'
-                            className='userID'
+                            className = {this.state.invalidCredentials ? 'userID inputError' : 'userID'}
                             type='text'
                             value={this.state.userID}
                             onChange={this.onInputChange}
@@ -60,12 +61,13 @@ class Login extends React.Component {
                         />
                         <input
                             name='password'
-                            className='password'
+                            className = {this.state.invalidCredentials ? 'password inputError' : 'password'}
                             type='password'
                             value={this.state.password}
                             onChange={this.onInputChange}
                             placeholder='Password'
                         />
+                        {this.state.invalidCredentials && <p>Please Enter valid credentials. <Link to='/forgotpassword'> Forgot Password ?</Link></p>}
                         <div className='signIn'>
                             <button onClick={this.proceedToLogin}>Sign In</button>
                             <input
