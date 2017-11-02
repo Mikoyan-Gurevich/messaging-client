@@ -11,6 +11,7 @@ class HomePage extends React.Component {
         super();
         this.state = {
             showAllLanguages: false,
+            showLanguageBar: true
         };
         this.showLanguageSelection = this.showLanguageSelection.bind(this);
         this.setLanguage = this.setLanguage.bind(this);
@@ -27,16 +28,17 @@ class HomePage extends React.Component {
 
     setLanguage(event) {
         window.localStorage.selectedlanguage = event.target.name;
-        this.hideLanguageSelection();
+        this.setState({showLanguageBar: false, showAllLanguages: false});
+        window.location.reload();
     }
 
     render() {
-        let {showAllLanguages} = this.state;
+        let {showAllLanguages, showLanguageBar} = this.state;
         return (
             <Router>
                 <div className='homePage'>
                     <div className='languageChange'>
-                        {!showAllLanguages &&
+                        {!showAllLanguages && showLanguageBar &&
                             <div>
                                 This site supports multiple language. To switch to your favourite language
                                 <button onClick={this.showLanguageSelection}>click here.</button>
