@@ -10,7 +10,7 @@ class HomePage extends React.Component {
     constructor() {
         super();
         this.state = {
-            showAllLanguages: false
+            showAllLanguages: false,
         };
         this.showLanguageSelection = this.showLanguageSelection.bind(this);
         this.setLanguage = this.setLanguage.bind(this);
@@ -38,12 +38,12 @@ class HomePage extends React.Component {
                     <div className='languageChange'>
                         {!showAllLanguages &&
                             <div>
-                                This site supports multiple language. To switch to your favourite language 
+                                This site supports multiple language. To switch to your favourite language
                                 <button onClick={this.showLanguageSelection}>click here.</button>
                             </div>
                         }
-                        {showAllLanguages && 
-                            <div className='showAllLanguages'> 
+                        {showAllLanguages &&
+                            <div className='showAllLanguages'>
                                 <div className='outer'>
                                     <div className='inner'>
                                         <div className='header'>Select Language</div>

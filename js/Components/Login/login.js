@@ -27,9 +27,8 @@ class Login extends React.Component {
              resp.staySignedIn = staySignedIn;
             window.localStorage.userDetails = JSON.stringify(resp);
          }, (error) => {
-             this.setState({invalidCredentials: true})
+             this.setState({invalidCredentials: true});
          });
-        
     }
 
     onInputChange(event) {
