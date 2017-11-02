@@ -1,3 +1,12 @@
 {
-	"appTitle": "Konnect - Connect every aspect"
+	"appTitle": "Konnect - Connect every aspect",
+	"subTitle": "Connecting every aspect",
+	"userIDInput": "Username/ Mobile Number/ Email ID",
+	"password": "Password",
+	"signIn": "Sign In",
+	"changeLanguageText": "This site supports multiple language. To switch to your favourite language",
+	"clickHere": "Click here",
+	"staySignedIn": "Keep me signed in",
+	"newUser": "new user ?",
+	"signUp": "Sign Up"
 }

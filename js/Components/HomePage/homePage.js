@@ -39,9 +39,9 @@ class HomePage extends React.Component {
                 <div className='homePage'>
                     <div className='languageChange'>
                         {!showAllLanguages && showLanguageBar &&
-                            <div>
-                                This site supports multiple language. To switch to your favourite language
-                                <button onClick={this.showLanguageSelection}>click here.</button>
+                            <div> 
+                                {getStringInSelectedlanguage('changeLanguageText')}
+                                <button onClick={this.showLanguageSelection}>{getStringInSelectedlanguage('clickHere')}.</button>
                             </div>
                         }
                         {showAllLanguages &&
