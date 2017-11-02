@@ -1,2 +1,64 @@
 .homePage {
+	.languageChange {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    font-size: 12px;
+	    text-align: center;
+	    width: 100%;
+	    z-index: 9999;
+	    background-color: #e8e5e5;
+	    button {
+    	    background: none;
+		    outline: none;
+		    border: none;
+		    color: blue;
+		    cursor: pointer;
+	    }
+	}
+	.showAllLanguages {
+		.outer {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(197, 202, 202, 0.6);
+			z-index: 9999;
+			.inner {
+				position: absolute;
+				z-index: 99999;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height: 400px;
+				width: 600px;
+				background-color: white;
+				border: 1px solid grey;
+				border-radius: 10px;
+				.header {
+					height: 40px;
+					background-color: #d1d6d6;
+					font-size: 20px;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+					margin-bottom: 40px;
+					padding-top: 10px;
+					color: #84bdc1;
+				}
+				.body {
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					button {
+						height: 40px;
+						width: 110px;
+						border: 1px solid #767c98;
+						background-color: #dcdfdf;
+						border-radius: 5px;
+						font-size: 20px;
+						color: #78bdc1;
+					}
+				}
+			}
+		}
+	}
 }
