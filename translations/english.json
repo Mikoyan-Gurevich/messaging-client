@@ -8,5 +8,10 @@
 	"clickHere": "Click here",
 	"staySignedIn": "Keep me signed in",
 	"newUser": "new user ?",
-	"signUp": "Sign Up"
+	"signUp": "Sign Up",
+	"firstName": "First Name",
+	"lastName": "Last Name",
+	"password": "Password",
+	"email": "Email ID",
+	"mobile": "Mobile Number"
 }

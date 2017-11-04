@@ -8,5 +8,10 @@
 	"clickHere": "यहां क्लिक करे",
 	"staySignedIn": "मुझे याद रखें",
 	"newUser": "नया उपयोगकर्ता ?",
-	"signUp": "साइन अप करें"
+	"signUp": "साइन अप करें",
+	"firstName": "पहला नाम",
+	"lastName": "अंतिम नाम",
+	"password": "पासवर्ड",
+	"email": "ईमेल आईडी",
+	"mobile": "मोबाइल नंबर"
 }
