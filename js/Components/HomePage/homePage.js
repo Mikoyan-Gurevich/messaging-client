@@ -11,7 +11,7 @@ class HomePage extends React.Component {
         super();
         this.state = {
             showAllLanguages: false,
-            showLanguageBar: true
+            showLanguageBar: true,
         };
         this.showLanguageSelection = this.showLanguageSelection.bind(this);
         this.setLanguage = this.setLanguage.bind(this);
@@ -39,7 +39,7 @@ class HomePage extends React.Component {
                 <div className='homePage'>
                     <div className='languageChange'>
                         {!showAllLanguages && showLanguageBar &&
-                            <div> 
+                            <div>
                                 {getStringInSelectedlanguage('changeLanguageText')}
                                 <button onClick={this.showLanguageSelection}>{getStringInSelectedlanguage('clickHere')}.</button>
                             </div>

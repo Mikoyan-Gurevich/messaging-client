@@ -11,12 +11,14 @@ class SignUp extends React.Component {
         super();
         this.inputs = [
             {name: 'firstName', type: 'text'},
-            {name: 'lastName',  type: 'text'},
-            {name: 'password',  type: 'password'},
-            {name: 'mobile',  type: 'text'},
+            {name: 'lastName', type: 'text'},
+            {name: 'password', type: 'password'},
+            {name: 'mobile', type: 'text'},
             {name: 'email', type: 'text'},
         ];
-        this.inputs.map((field) => {field.label = getStringInSelectedlanguage(field.name)});
+        this.inputs.map((field) => {
+field.label = getStringInSelectedlanguage(field.name);
+});
         this.submitForm = this.submitForm.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.state = {

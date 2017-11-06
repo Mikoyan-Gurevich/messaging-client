@@ -8,11 +8,11 @@ import hindi from '../translations/hindi.json';
 
 OfflinePluginRuntime.install();
 
-let languageObj = { english, hindi };
+let languageObj = {english, hindi};
 
-window.getStringInSelectedlanguage  = (code) => {
+window.getStringInSelectedlanguage = (code) => {
 	return languageObj[window.localStorage && window.localStorage.selectedlanguage || 'english'][code];
-}
+};
 
 document.title = getStringInSelectedlanguage('appTitle');
 
