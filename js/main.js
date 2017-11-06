@@ -8,12 +8,10 @@ import hindi from '../translations/hindi.json';
 
 OfflinePluginRuntime.install();
 
-let languageObj = {english, hindi};
+const languageObj = { english, hindi };
 
-window.getStringInSelectedlanguage = (code) => {
-	return languageObj[window.localStorage && window.localStorage.selectedlanguage || 'english'][code];
-};
+window.getStringInSelectedlanguage = code => languageObj[window.localStorage && window.localStorage.selectedlanguage || 'english'][code];
 
 document.title = getStringInSelectedlanguage('appTitle');
 
-ReactDOM.render(<Homepage/>, document.getElementById('app'));
+ReactDOM.render(<Homepage />, document.getElementById('app'));
