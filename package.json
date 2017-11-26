@@ -2,6 +2,7 @@
   "name": "messaging-client",
   "version": "0.0.1",
   "dependencies": {
+    "pouchdb": "^6.3.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
