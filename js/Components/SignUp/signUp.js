@@ -108,7 +108,7 @@ class SignUp extends React.Component {
         {
                     this.state.signupComplete && <div className="postSignUp">
                         Congratulations ! You have been registered successfully.
-                        <Link to="/">Login </Link>
+                      <Link to="/">Login </Link>
                         to continue.
                                                  </div>
                 }
