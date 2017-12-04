@@ -1,0 +1,12 @@
+.tuna {
+  background: url(http://stash.rachelnabors.com/animation-workshop/sprite_catwalk.png) 0 0 no-repeat; 
+  animation: catwalk 1s steps(12) infinite;
+  height: 200px;
+  width: 400px;
+  margin: 100px auto 0;
+}
+
+@keyframes catwalk {
+  0% {background-position: 0 0;}
+  100% {background-position: 0 -2400px;}
+}

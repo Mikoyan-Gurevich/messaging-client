@@ -16,7 +16,9 @@ class Gallery extends React.Component {
     }
     render() {
         return <div>
-            <ParentContainer />
+            <ParentContainer>
+                <div className='tuna'></div>
+            </ParentContainer>
         </div>
     }
 }
