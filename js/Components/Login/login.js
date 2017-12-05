@@ -46,9 +46,10 @@ class Login extends React.Component {
       <div className="superContainer">
         <div className="logoContainer" />
         <div className="loginContainer">
-          <div className="konnect">Konnect</div>
+          <div className="konnect"></div>
           <div className="login">
             <label className="title">{getStringInSelectedlanguage('subTitle')}.</label>
+            <div className="userIdIcon"></div>
             <input
               name="userID"
               className={this.state.invalidCredentials ? 'userID inputError' : 'userID'}
@@ -57,6 +58,7 @@ class Login extends React.Component {
               onChange={this.onInputChange}
               placeholder={getStringInSelectedlanguage('userIDInput')}
             />
+            <div className="passwordIcon"></div>
             <input
               name="password"
               className={this.state.invalidCredentials ? 'password inputError' : 'password'}
