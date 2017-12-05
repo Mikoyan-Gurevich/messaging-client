@@ -6,7 +6,7 @@ import Gallery from './Components/Gallery/gallery';
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 import english from '../translations/english.json';
 import hindi from '../translations/hindi.json';
-//import db from '../js/db/db';
+// import db from '../js/db/db';
 
 OfflinePluginRuntime.install();
 
