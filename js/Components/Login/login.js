@@ -44,12 +44,11 @@ class Login extends React.Component {
     }
     return (
       <div className="superContainer">
-        <div className="logoContainer" />
-        <div className="loginContainer">
-          <div className="konnect"></div>
-          <div className="login">
-            <label className="title">{getStringInSelectedlanguage('subTitle')}.</label>
+        <div className="logoContainer">
+          <label className="title">{getStringInSelectedlanguage('subTitle')}.</label>
+          <div className="loginContainer">
             <div className="userIdIcon"></div>
+            <div className="passwordIcon"></div>
             <input
               name="userID"
               className={this.state.invalidCredentials ? 'userID inputError' : 'userID'}
@@ -58,7 +57,7 @@ class Login extends React.Component {
               onChange={this.onInputChange}
               placeholder={getStringInSelectedlanguage('userIDInput')}
             />
-            <div className="passwordIcon"></div>
+            
             <input
               name="password"
               className={this.state.invalidCredentials ? 'password inputError' : 'password'}
@@ -67,6 +66,9 @@ class Login extends React.Component {
               onChange={this.onInputChange}
               placeholder={getStringInSelectedlanguage('password')}
             />
+          </div>
+          
+          
             {this.state.invalidCredentials && <p>Please Enter valid credentials. <Link to="/forgotpassword"> Forgot Password ?</Link></p>}
             <div className="signIn">
               <button onClick={this.proceedToLogin}>{getStringInSelectedlanguage('signIn')}</button>
@@ -77,12 +79,13 @@ class Login extends React.Component {
                 type="checkbox"
               />
             </div>
-          </div>
-        </div>
-        <div className="newUser">
-          <div>{getStringInSelectedlanguage('staySignedIn')}</div>
-          <div>{getStringInSelectedlanguage('newUser')} <Link to="/signup">{getStringInSelectedlanguage('signUp')}</Link></div>
-        </div>
+          
+          <div className="staySigned">{getStringInSelectedlanguage('staySignedIn')}</div>
+            <div className="newUser">
+            
+            <div>{getStringInSelectedlanguage('newUser')} <Link to="/signup">{getStringInSelectedlanguage('signUp')}</Link></div>
+            </div>
+        </div>  
       </div>
     );
   }

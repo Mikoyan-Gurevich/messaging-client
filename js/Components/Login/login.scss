@@ -14,72 +14,98 @@ overflow: hidden;
 
   .logoContainer {
     position: fixed;
-  top: 8%;
-  left: 50%;
-  
-  margin-left: -125px;
+    top: 8%;
+    left: 50%;
+    margin-left: -126px;
     width: 253px;
     height: 85px;
-   background-image: url(../../../assets/Login_Page-assets/KonnectLogo.png);
-  }
+    background-image: url(../../../assets/Login_Page-assets/KonnectLogo.png);
+                  .title
+                   {
+                    position: absolute;
+                    top:60%;
+                    left: 36%;
+                    font-family: 'Monotype Corsiva';
+                    font-size: 13px;
+                    margin-left: 25px;
+                   -webkit-text-fill-color: white;
+                   }
+                  .loginContainer
+                  {
+                    position: absolute;
+                    top: 150%;
+                    left:6%;
+                    
+                     .userIdIcon
+                     {
+                        position: relative;
+                        
+                        background-image: url(../../../assets/Login_Page-assets/UserImage.png);
+                        width:22px;
+                        height: 22px;
+                      
+                     }
+                     .passwordIcon
+                     {
+                      background-image: url(../../../assets/Login_Page-assets/password_Image.png);
+                      position: relative;
+                      margin-top:150%;
+                      width:22px;
+                      height: 15px;
+                     }
+                     .userID {
+        
+                                position: absolute;
+                                top: 1%;
+                                margin-left: 130%;
+                                
+                               
+                              }
+                      .password {
+                               position: absolute;                              ; 
+                               top: 70%;
+                                margin-left: 130%;
 
-  .loginContainer {
-    
-    
-    .login {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-       margin-left: -175px;
-    width: 350px;
-    height: 10px;
-    object-fit: contain;
-    font-family: 'Lucida Sans Unicode';
-    font-size: 12px;
-    text-align: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: white;
-    
-      
-      
-      .title {
-          position: fixed;
-          top: 16.5%;
-          left: 50%;
-          font-family: 'Monotype Corsiva';
-          font-size: 11px;
-          margin-left: -20px;
-            }
-      input {
-        
-        background: transparent;
-        border: none;
-        border-bottom: 1.9px solid #ffffff;
-        width: 190px;
-        font-size: 16px;
-        color:white;
-        text-align: left;
-        outline: none;
-         opacity: 0.99;
-        
-      }
-      input::-webkit-input-placeholder {
-        color: #ffffff;
-        font-size: 12px;
-        opacity: 0.80;
-       
-      }
-      button {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          margin-left:-42px;
-        background-image: url(../../../assets/Login_Page-assets/LoginButton.png);
-        height: 35px;
-        width: 95px;
+                                }
+                    input 
+                          {
+                                                                
+                              background: transparent;
+                               border: none;
+                              border-bottom: 2px solid #ffffff;
+                               width: 190px;
+                              font-size: 16px;
+                            color:white;
+                             text-align: left;
+                               outline: none;
+                              opacity: 0.99;
+                              
+                          }
+                          input:hover{
+                            border-bottom: 2.5px solid #00b7ff;
+                            opacity: 0.5;
+                          }
+                   input::-webkit-input-placeholder
+                   {   
+                       color: #ffffff;
+                       font-size: 12px;
+                       opacity: 0.50;
+                           }
+                           
+                  }
+             button
+              {
+                  position: absolute;
+                  top: 350%;
+                   left: 50%;
+                     margin-left:-42px;
+                  background-image: url(../../../assets/Login_Page-assets/LoginButton.png);
+                height: 35px;
+                width: 95px;
+                border:none;
+                color: #ffffff;
                 
-      }
+               }
       button:hover {
    
         background-image: url(../../../assets/Login_Page-assets/LoginButtonHover.png);
@@ -87,80 +113,76 @@ overflow: hidden;
         width: 95px;
              
       }
+      p{
+        position: absolute;
+        top:200%;
+        margin-left: 100%;
+        width: 200px;
+        font-size: 13px;
+        color: #ffffff;
+        text-decoration: none !important;
+        color: #ffee00;
+        opacity: 1;
+      }
       
       .inputError {
-        box-shadow: 0 0 6px 1px #cfcfcf;
-      }
-      .userIdIcon{
-        background-image: url(../../../assets/Login_Page-assets/UserImage.png);
-        position: fixed;
-        top: 22%;
-        left: 50%;
-         width:22px;
-        height: 22px;
-        margin-left: -110px;
-        margin-top: 35px;
-      }
-      .passwordIcon{
-        background-image: url(../../../assets/Login_Page-assets/password_Image.png);
-        position:fixed;
-        top: 31%;
-        left: 50%;
         
-        margin-left: -110px;
-        margin-top: 35px;
-        width:22px;
-        height: 15px;
-      }
-      .userID {
+       
+    box-sizing: border-box;
+      box-shadow: 0 0 6px 1px #fa0000;
         
-         position: fixed; 
-        top: 27.5%;
-        left: 50%;
-        
-        margin-left: -80px;
       }
-      .password {
-         position: fixed; 
-        top: 30%;
-        left: 50%;
-        
-        margin-left: -80px;
-        margin-top: 35px;
-      }
+     
+      
       .signIn {
         display: flex;
         align-items: center;
-        margin-top: -40px;
+        font-size: 12px;
+        color: #ffffff;
+        
+      
+       
       
         input {
-          top: 20%;
+          position:absolute;
+          top: 280%;
           left: 50%;
-          margin-left: -20px;
+          margin-left: -50px;
         }
       }
     }
-  }
+    .staySigned{
+      position: absolute;
+      top:284%;
+      margin-left: 40%;
+      font-size: 12px;
+      color: #ffffff;
+      
+    }
+  
 
   .newUser {
-      position: fixed;
-  top: 44%;
-  left: 50%;
+      position: absolute;
+  top: 420%;
+  left: 55%;
   margin-left: -80px;
-    font-size: 12px;
+  width:100%;
+    font-size: 16px;
     
      color: #ffffff;
      opacity: 0.8;
   }
 
-  .newUser div:nth-child(2) {
-    margin-top: 93px;
-    font-size: 16px;
+  .newUser div:nth-child(1) {
+   
     font-family: 'Lucida Sans Unicode';
     a {
       text-decoration: none !important;
-      color: #ffef08;
+      color: #ffee00;
       opacity: 1;
+    }
+    a:hover{
+      color:#0890ff;
     }
   }
 }
