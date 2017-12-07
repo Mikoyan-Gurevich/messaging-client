@@ -1,111 +1,129 @@
-.superContainer {
-
+.superContainer{
+display:flex;
+flex-direction: column;
+    position:fixed;
+    
+    width: 100%;
+    height: 100%;
+    
+    object-fit:scale-down;
+    background-color:#858585;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+.ContainAll{
+  
+  
   position: fixed;
-  width: 100%;
-  height: 100%;
-  padding:0px;
-   object-fit:contain;
-  background-image: url(../../../assets/Login_Page-assets/Bg_Image.png);
-  background-repeat:no-repeat;
-background-size:scale;
-background-position:center;
-overflow: hidden;
- 
+  top: 0; left: 0; bottom: 0; right: 0;
+   
+  .logoContainer
+   {
 
-  .logoContainer {
-    position: fixed;
-    top: 8%;
+    display:flex;
+    flex-direction: column;
+    top:10%;
     left: 50%;
-    margin-left: -126px;
+    margin-left:-126px;
+    position: relative;
+    flex-wrap: wrap;
     width: 253px;
     height: 85px;
     background-image: url(../../../assets/Login_Page-assets/KonnectLogo.png);
-                  .title
-                   {
-                    position: absolute;
-                    top:60%;
-                    left: 36%;
-                    font-family: 'Monotype Corsiva';
-                    font-size: 13px;
-                    margin-left: 25px;
-                   -webkit-text-fill-color: white;
-                   }
-                  .loginContainer
-                  {
-                    position: absolute;
-                    top: 150%;
-                    left:6%;
-                    
-                     .userIdIcon
-                     {
-                        position: relative;
-                        
-                        background-image: url(../../../assets/Login_Page-assets/UserImage.png);
-                        width:22px;
-                        height: 22px;
-                      
-                     }
-                     .passwordIcon
-                     {
-                      background-image: url(../../../assets/Login_Page-assets/password_Image.png);
-                      position: relative;
-                      margin-top:150%;
-                      width:22px;
-                      height: 15px;
-                     }
-                     .userID {
-        
-                                position: absolute;
-                                top: 1%;
-                                margin-left: 130%;
-                                
-                               
-                              }
-                      .password {
-                               position: absolute;                              ; 
-                               top: 70%;
-                                margin-left: 130%;
+    
+    .title
+    {
+    font-family: 'Monotype Corsiva';
+    font-size: 13px;
+    top:63%;
+    left: 50%;
+    position: relative;
+   -webkit-text-fill-color: white;
+    }
+   .loginContainer
+  {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top:50%;
+    margin-left: 3%;
+    justify-content: space-between;
+       
+    .userIdIcon
+     {
+      background-image: url(../../../assets/Login_Page-assets/UserImage.png);
+      width:22px;
+      height: 22px; 
+     }
+    .userID
+      {
+      position: relative;
+      margin-left: 150%;
+                  
+      }
+    .passwordIcon
+    {
+      background-image: url(../../../assets/Login_Page-assets/password_Image.png);
+      width:22px;
+      height: 15px;
+      margin-top: 120%;
+     
+      }           
+    .password
+      {
+      position: relative;                              ; 
+      margin-left: 150%;
+      margin-top: -1%;
 
-                                }
-                    input 
-                          {
-                                                                
-                              background: transparent;
-                               border: none;
-                              border-bottom: 2px solid #ffffff;
-                               width: 190px;
-                              font-size: 16px;
-                            color:white;
-                             text-align: left;
-                               outline: none;
-                              opacity: 0.99;
-                              
-                          }
-                          input:hover{
-                            border-bottom: 2.5px solid #00b7ff;
-                            opacity: 0.5;
-                          }
-                   input::-webkit-input-placeholder
-                   {   
-                       color: #ffffff;
-                       font-size: 12px;
-                       opacity: 0.50;
-                           }
-                           
-                  }
-             button
-              {
-                  position: absolute;
-                  top: 350%;
-                   left: 50%;
-                     margin-left:-42px;
-                  background-image: url(../../../assets/Login_Page-assets/LoginButton.png);
-                height: 35px;
-                width: 95px;
-                border:none;
-                color: #ffffff;
-                
-               }
+      }
+    input 
+    {
+                                          
+        background: transparent;
+          border: none;
+        border-bottom: 2px solid #ffffff;
+          width: 200px;
+        font-size: 16px;
+      color:white;
+        text-align: left;
+          outline: none;
+        opacity: 0.99;
+        
+    }
+      input:hover
+   {
+    border-bottom: 2.5px solid #00b7ff;
+    opacity: 0.5;
+    } 
+      input::-webkit-input-placeholder
+    {   
+        color: #ffffff;
+        font-size: 12px;
+        opacity: 0.50;
+    }
+  }
+  
+      .signIn {
+        margin-top:100%;
+        font-size: 12px;
+        left: 50%;
+        margin-left: -36%;
+        align-content: center;
+        color: #ffffff;
+      } 
+        button
+        {   clear: both;
+            width: 95px;
+            height: 35px; 
+            background-size: auto;
+            background-image: url(../../../assets/Login_Page-assets/LoginButton.png);
+          
+          
+          border:none;
+          color:white;
+          
+          }
       button:hover {
    
         background-image: url(../../../assets/Login_Page-assets/LoginButtonHover.png);
@@ -113,64 +131,17 @@ overflow: hidden;
         width: 95px;
              
       }
-      p{
-        position: absolute;
-        top:200%;
-        margin-left: 100%;
-        width: 200px;
-        font-size: 13px;
-        color: #ffffff;
-        text-decoration: none !important;
-        color: #ffee00;
-        opacity: 1;
-      }
       
-      .inputError {
-        
-       
-    box-sizing: border-box;
-      box-shadow: 0 0 6px 1px #fa0000;
-        
-      }
-     
-      
-      .signIn {
-        display: flex;
-        align-items: center;
-        font-size: 12px;
-        color: #ffffff;
-        
-      
-       
-      
-        input {
-          position:absolute;
-          top: 280%;
-          left: 50%;
-          margin-left: -50px;
-        }
-      }
-    }
-    .staySigned{
-      position: absolute;
-      top:284%;
-      margin-left: 40%;
-      font-size: 12px;
-      color: #ffffff;
-      
-    }
-  
 
-  .newUser {
-      position: absolute;
-  top: 420%;
-  left: 55%;
-  margin-left: -80px;
-  width:100%;
+.newUser {
+    position: absolute;
+    width:100%;
+    margin-top: 130%;
+    left:50%;
+    margin-left:-25%;
     font-size: 16px;
-    
-     color: #ffffff;
-     opacity: 0.8;
+    color: #ffffff;
+    opacity: 1;
   }
 
   .newUser div:nth-child(1) {
@@ -184,5 +155,30 @@ overflow: hidden;
     a:hover{
       color:#0890ff;
     }
+} 
+  p{
+        position: absolute;
+        top:200%;
+        margin-left: 100%;
+        width: 200px;
+        font-size: 13px;
+        color: #ffffff;
+        text-decoration: none !important;
+        color: #ffee00;
+        opacity: 1;
+      }
+}}
+}
+@media screen and (max-width:1320px){
+  .superContainer{
+    display:flex;
+  flex-direction: column;
+   
+  }}
+  @media only screen and (device-width: 360px) {
+  /* For general iPad layouts */
+  .ContainAll{
+   
+  height: 320vw;
   }
 }
