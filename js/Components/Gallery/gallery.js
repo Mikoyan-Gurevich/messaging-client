@@ -21,17 +21,17 @@ const Tuna = styled.div`
     margin: 100px auto 0;
 `;
 class Gallery extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
-    }
-    render() {
-        return (<div>
-            <ParentContainer>
-                <Tuna />
-            </ParentContainer>
-        </div>);
-    }
+  constructor() {
+    super();
+    this.state = {};
+  }
+  render() {
+    return (<div>
+      <ParentContainer>
+        <Tuna />
+      </ParentContainer>
+            </div>);
+  }
 }
 
 export default Gallery;
