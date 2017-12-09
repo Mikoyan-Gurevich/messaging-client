@@ -44,44 +44,43 @@ class Login extends React.Component {
     }
     return (
       <div className="superContainer">
-        <div className="logoContainer" />
-        <div className="loginContainer">
-          <div className="konnect">Konnect</div>
-          <div className="login">
+        <div className="ContainAll">
+          <div className="logoContainer">
             <label className="title">{getStringInSelectedlanguage('subTitle')}.</label>
-            <input
-              name="userID"
-              className={this.state.invalidCredentials ? 'userID inputError' : 'userID'}
-              type="text"
-              value={this.state.userID}
-              onChange={this.onInputChange}
-              placeholder={getStringInSelectedlanguage('userIDInput')}
-            />
-            <input
-              name="password"
-              className={this.state.invalidCredentials ? 'password inputError' : 'password'}
-              type="password"
-              value={this.state.password}
-              onChange={this.onInputChange}
-              placeholder={getStringInSelectedlanguage('password')}
-            />
+            <div className="loginContainer">
+              <div className="userIdIcon">
+
+                <input
+                  name="userID"
+                  className={this.state.invalidCredentials ? 'userID inputError' : 'userID'}
+                  type="text"
+                  value={this.state.userID}
+                  onChange={this.onInputChange}
+                  placeholder={getStringInSelectedlanguage('userIDInput')}
+                /></div>
+              <div className="passwordIcon">
+                <input
+                  name="password"
+                  className={this.state.invalidCredentials ? 'password inputError' : 'password'}
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onInputChange}
+                  placeholder={getStringInSelectedlanguage('password')}
+                /></div>
+            </div>
+
+
             {this.state.invalidCredentials && <p>Please Enter valid credentials. <Link to="/forgotpassword"> Forgot Password ?</Link></p>}
             <div className="signIn">
               <button onClick={this.proceedToLogin}>{getStringInSelectedlanguage('signIn')}</button>
-              <input
-                name="staySignedIn"
-                value={this.state.staySignedIn}
-                onChange={this.onInputChange}
-                type="checkbox"
-              />
+            </div>
+
+            <div className="newUser">
+
+              <div>{getStringInSelectedlanguage('newUser')} <Link to="/signup">{getStringInSelectedlanguage('signUp')}</Link></div>
             </div>
           </div>
-        </div>
-        <div className="newUser">
-          <div>{getStringInSelectedlanguage('staySignedIn')}</div>
-          <div>{getStringInSelectedlanguage('newUser')} <Link to="/signup">{getStringInSelectedlanguage('signUp')}</Link></div>
-        </div>
-      </div>
+        </div></div>
     );
   }
 }
